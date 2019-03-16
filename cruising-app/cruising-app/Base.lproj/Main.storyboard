@@ -50,6 +50,81 @@
             </objects>
             <point key="canvasLocation" x="-1823.2" y="-151.47783251231527"/>
         </scene>
+        <!--Dining-->
+        <scene sceneID="cld-m7-y8r">
+            <objects>
+                <viewController id="xqG-GF-fEy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yMN-Sx-FRa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" text="Dining" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfD-o4-ARi">
+                                <rect key="frame" x="0.0" y="44" width="375" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="37"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="dbq-dS-gBQ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Dining" id="s7e-uf-aPl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z24-6v-C7N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="417" y="-404"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="n6y-gj-sdi">
+            <objects>
+                <viewController id="Ie7-lm-G4U" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9xQ-Nk-zwh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" text="Profile" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9kI-vn-Snf">
+                                <rect key="frame" x="0.0" y="44" width="375" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="37"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="RQl-jh-67l"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" id="X94-FY-jha"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewW-fC-EUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="417" y="360"/>
+        </scene>
+        <!--FAQ-->
+        <scene sceneID="sbB-B1-Psa">
+            <objects>
+                <viewController id="iWX-i5-tVW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pNS-Lp-1Vx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" text="FAQs" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BOH-H2-R7F">
+                                <rect key="frame" x="0.0" y="44" width="375" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="37"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Eur-Xp-7rQ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="FAQ" id="9Jd-58-USH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iD9-d7-9gQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="417" y="1051"/>
+        </scene>
         <!--Events-->
         <scene sceneID="401-3t-pkB">
             <objects>
@@ -73,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sN-3C-6kH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="417" y="-302"/>
+            <point key="canvasLocation" x="417" y="-1147"/>
         </scene>
         <!--Home-->
         <scene sceneID="R2l-iY-tK2">
@@ -90,6 +165,32 @@
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="37"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JRZ-qT-5eX">
+                                <rect key="frame" x="16" y="113" width="343" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rVa-jc-bZH">
+                                <rect key="frame" x="16" y="123" width="343" height="206"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hi Brad! You have the following events coming up:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nid-ht-8BB">
+                                        <rect key="frame" x="8" y="18" width="327" height="67"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDj-4B-BAa">
+                                        <rect key="frame" x="8" y="93" width="320" height="105"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vhZ-YE-6do"/>
@@ -98,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OgT-92-wfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="417" y="-1057"/>
+            <point key="canvasLocation" x="417" y="-1867"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="A66-jN-Ohz">
@@ -112,6 +213,9 @@
                     <connections>
                         <segue destination="aQg-Mv-dGm" kind="relationship" relationship="viewControllers" id="des-xy-R1n"/>
                         <segue destination="QhQ-bz-3rU" kind="relationship" relationship="viewControllers" id="muQ-Ay-8mb"/>
+                        <segue destination="xqG-GF-fEy" kind="relationship" relationship="viewControllers" id="yFW-O9-qdT"/>
+                        <segue destination="Ie7-lm-G4U" kind="relationship" relationship="viewControllers" id="h3x-dm-6Cr"/>
+                        <segue destination="iWX-i5-tVW" kind="relationship" relationship="viewControllers" id="dOg-f1-w6M"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iL1-qo-HgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
