@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AA5499A928774310D6AA0B6 /* Pods_cruising_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A5BEDCECF06A9C48F7939 /* Pods_cruising_app.framework */; };
 		EDF24955223D7F8300FAD972 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF24954223D7F8300FAD972 /* AppDelegate.swift */; };
 		EDF24957223D7F8300FAD972 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF24956223D7F8300FAD972 /* ViewController.swift */; };
 		EDF2495A223D7F8300FAD972 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF24958223D7F8300FAD972 /* Main.storyboard */; };
 		EDF2495C223D7F8500FAD972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF2495B223D7F8500FAD972 /* Assets.xcassets */; };
 		EDF2495F223D7F8500FAD972 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF2495D223D7F8500FAD972 /* LaunchScreen.storyboard */; };
 		EDF2496A223D7F8500FAD972 /* cruising_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF24969223D7F8500FAD972 /* cruising_appTests.swift */; };
+		F884E508B290242373B77F14 /* Pods_cruising_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C569142BCC8F516C577967F0 /* Pods_cruising_appTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F1A5BEDCECF06A9C48F7939 /* Pods_cruising_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cruising_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58D41425218194C8900A3CC0 /* Pods-cruising-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cruising-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cruising-app/Pods-cruising-app.debug.xcconfig"; sourceTree = "<group>"; };
+		7CE66289AF0C7CF6D8F93254 /* Pods-cruising-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cruising-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-cruising-app/Pods-cruising-app.release.xcconfig"; sourceTree = "<group>"; };
+		B5A193BB1367ACCF29A0C6A2 /* Pods-cruising-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cruising-appTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cruising-appTests/Pods-cruising-appTests.release.xcconfig"; sourceTree = "<group>"; };
+		B824F5B7E9C6E3492444EC48 /* Pods-cruising-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cruising-appTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cruising-appTests/Pods-cruising-appTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C569142BCC8F516C577967F0 /* Pods_cruising_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cruising_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF24951223D7F8300FAD972 /* cruising-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cruising-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF24954223D7F8300FAD972 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDF24956223D7F8300FAD972 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AA5499A928774310D6AA0B6 /* Pods_cruising_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +59,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F884E508B290242373B77F14 /* Pods_cruising_appTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69431E7851617A8D662CC712 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F1A5BEDCECF06A9C48F7939 /* Pods_cruising_app.framework */,
+				C569142BCC8F516C577967F0 /* Pods_cruising_appTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B9B8C752D1867AC811348EB4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58D41425218194C8900A3CC0 /* Pods-cruising-app.debug.xcconfig */,
+				7CE66289AF0C7CF6D8F93254 /* Pods-cruising-app.release.xcconfig */,
+				B824F5B7E9C6E3492444EC48 /* Pods-cruising-appTests.debug.xcconfig */,
+				B5A193BB1367ACCF29A0C6A2 /* Pods-cruising-appTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EDF24948223D7F8300FAD972 = {
 			isa = PBXGroup;
 			children = (
 				EDF24953223D7F8300FAD972 /* cruising-app */,
 				EDF24968223D7F8500FAD972 /* cruising-appTests */,
 				EDF24952223D7F8300FAD972 /* Products */,
+				B9B8C752D1867AC811348EB4 /* Pods */,
+				69431E7851617A8D662CC712 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,9 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDF2496E223D7F8500FAD972 /* Build configuration list for PBXNativeTarget "cruising-app" */;
 			buildPhases = (
+				B321EFDBE06EF40E39EFB80A /* [CP] Check Pods Manifest.lock */,
 				EDF2494D223D7F8300FAD972 /* Sources */,
 				EDF2494E223D7F8300FAD972 /* Frameworks */,
 				EDF2494F223D7F8300FAD972 /* Resources */,
+				B6880614D0DD87478DD983EC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -120,6 +154,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDF24971223D7F8500FAD972 /* Build configuration list for PBXNativeTarget "cruising-appTests" */;
 			buildPhases = (
+				C497F0D86BBBE620038601E3 /* [CP] Check Pods Manifest.lock */,
 				EDF24961223D7F8500FAD972 /* Sources */,
 				EDF24962223D7F8500FAD972 /* Frameworks */,
 				EDF24963223D7F8500FAD972 /* Resources */,
@@ -191,6 +226,77 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B321EFDBE06EF40E39EFB80A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cruising-app-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6880614D0DD87478DD983EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-cruising-app/Pods-cruising-app-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cruising-app/Pods-cruising-app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C497F0D86BBBE620038601E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cruising-appTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EDF2494D223D7F8300FAD972 /* Sources */ = {
@@ -356,10 +462,11 @@
 		};
 		EDF2496F223D7F8500FAD972 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58D41425218194C8900A3CC0 /* Pods-cruising-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 864GPPRHMT;
+				DEVELOPMENT_TEAM = L9J639CDF6;
 				INFOPLIST_FILE = "cruising-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -374,10 +481,11 @@
 		};
 		EDF24970223D7F8500FAD972 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CE66289AF0C7CF6D8F93254 /* Pods-cruising-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 864GPPRHMT;
+				DEVELOPMENT_TEAM = L9J639CDF6;
 				INFOPLIST_FILE = "cruising-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -392,6 +500,7 @@
 		};
 		EDF24972223D7F8500FAD972 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B824F5B7E9C6E3492444EC48 /* Pods-cruising-appTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -412,6 +521,7 @@
 		};
 		EDF24973223D7F8500FAD972 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5A193BB1367ACCF29A0C6A2 /* Pods-cruising-appTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
