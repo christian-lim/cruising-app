@@ -1,0 +1,6 @@
+framework module Pods_cruising_appTests {
+  umbrella header "Pods-cruising-appTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
