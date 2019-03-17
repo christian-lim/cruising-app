@@ -22,11 +22,38 @@ class profileViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(loadData), name: NSNotification.Name(rawValue: "profileDidLoad"), object: nil)
     }
     
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+        NotificationCenter.default.addObserver(self, selector: #selector(profileViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(profileViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         loadData()
         // Do any additional setup after loading the view.
     }
+    
+//    @objc func isGoodPhoneNumber(_ sender: UITapGestureRecognizer){
+//        if self.phoneNumberTextField.text!.count != 10 {
+//            self.showToast(message: "Invalid phone number, should have a 10 digit entry")
+//        } else {
+//            self.view.endEditing(_:)
+//        }
+//    }
     
     @objc func loadData(){
         self.nameLabel.text = userDataModel.getName
@@ -52,7 +79,7 @@ class profileViewController: UIViewController {
     @IBAction func phoneNumberDidChange(_ sender: UITextField) {
     }
     
-
+    
     /*
     // MARK: - Navigation
 
