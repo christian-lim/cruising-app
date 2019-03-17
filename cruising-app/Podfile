@@ -7,6 +7,9 @@ target 'cruising-app' do
 
   # Pods for cruising-app
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'GoogleSignIn'
 
   target 'cruising-appTests' do
     inherit! :search_paths
