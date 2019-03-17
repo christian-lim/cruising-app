@@ -8,3 +8,27 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestore
+
+class UserEventModel {
+    
+    fileprivate var name: String?
+    fileprivate var event: String?
+    fileprivate var user_id: String?
+    fileprivate var event_id: String?
+    fileprivate var cruise_id: String?
+    
+    static let sharedInstance = UserEventModel()
+    
+    init(){
+        
+    }
+    
+    var firestoreDatabase : Firestore {
+        let database = Firestore.firestore()
+        let settings = database.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        database.settings = settings
+        return database
+    }
+}
