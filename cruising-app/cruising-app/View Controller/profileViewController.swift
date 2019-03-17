@@ -56,8 +56,8 @@ class profileViewController: UIViewController {
 //    }
     
     @objc func loadData(){
-        self.nameLabel.text = userDataModel.getName
-        self.sexLabel.text = userDataModel.getSex
+        self.nameLabel.text = userDataModel.getName ?? ""
+        self.sexLabel.text = userDataModel.getSex ?? ""
         self.ageLabel.text = String(userDataModel.getAge ?? 0)
         if let isDTF = userDataModel.isDTF {
             self.dtfPrefSwitch.isOn = isDTF
@@ -73,10 +73,13 @@ class profileViewController: UIViewController {
     }
     
     @IBAction func dtfPrefDidChange(_ sender: UISwitch) {
+        self.userDataModel.updateSingleFirebase(data: self.dtfPrefSwitch.isOn, operation: updateOperation.updateDTF)
     }
     @IBAction func searchableDidSwitch(_ sender: UISwitch) {
+        self.userDataModel.updateSingleFirebase(data: self.searchableSwitch.isOn, operation: updateOperation.updateSearchable)
     }
     @IBAction func phoneNumberDidChange(_ sender: UITextField) {
+        self.userDataModel.updateSingleFirebase(data: Int(self.phoneNumberTextField.text!), operation: updateOperation.updatePhoneNumber)
     }
     
     

@@ -10,8 +10,7 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
-class UserDataModel{
-    
+struct Profile{
     fileprivate var name: String? = nil
     fileprivate var age: Int? = nil
     fileprivate var room_number: Int? = nil
@@ -21,6 +20,12 @@ class UserDataModel{
     fileprivate var cruise_id: String? = nil
     fileprivate var phone_number: Int? = nil
     fileprivate var searchable: Bool? = nil
+    
+}
+
+class UserDataModel{
+    
+    fileprivate var profile :Profile? = nil
     
     static let sharedInstance = UserDataModel()
     
@@ -35,15 +40,7 @@ class UserDataModel{
             guard err == nil else {print("Error getting documents: \(err ?? "Failed" as! Error)");return}
             if let document = document, document.exists {
                 let data = document.data()!
-                self.name = data["name"] as? String
-                self.age = data["age"] as? Int
-                self.room_number = data["room_number"] as? Int
-                self.sex = data["sex"] as? String
-                self.DTF = data["DTF"] as? Bool
-                self.priority = data["priority"] as? Int
-                self.cruise_id = data["cruise_id"] as? String
-                self.phone_number = data["phone_number"] as? Int
-                self.searchable = data["searchable"] as? Bool
+                self.profile = Profile(name: data["name"] as? String, age: data["age"] as? Int, room_number: data["room_number"] as? Int, sex: data["sex"] as? String, DTF: data["DTF"] as? Bool, priority: data["priority"] as? Int, cruise_id: data["cruise_id"] as? String, phone_number: data["phone_number"] as? Int, searchable: data["searchable"] as? Bool)
                 NotificationCenter.default.post(name: Notification.Name(rawValue: "profileDidLoad"), object: nil)
             } else {
                 print("Document does not exist")
@@ -51,6 +48,18 @@ class UserDataModel{
         }
     }
 
+    func updateSingleFirebase(data: Any?, operation: updateOperation) {
+        guard let data = data else {return}
+        let database = firestoreDatabase
+        switch operation{
+        case .updateDTF :
+            database.collection("User").document("userID").updateData(["DTF": data])
+        case .updatePhoneNumber:
+            database.collection("User").document("userID").updateData(["phone_number": data])
+        case .updateSearchable:
+            database.collection("User").document("userID").updateData(["searchable": data])
+        }
+    }
     
     var firestoreDatabase : Firestore {
         let database = Firestore.firestore()
@@ -61,39 +70,39 @@ class UserDataModel{
     }
     
     var getName: String?{
-        return self.name
+        return self.profile!.name
     }
     
     var getAge: Int?{
-        return self.age
+        return self.profile!.age
     }
     
     var getRoomNumber: Int? {
-        return self.room_number
+        return self.profile!.room_number
     }
     
     var getSex: String? {
-        return self.sex
+        return self.profile!.sex
     }
     
     var isDTF: Bool?{
-        return self.DTF
+        return self.profile!.DTF
     }
     
     var getPriority: Int? {
-        return self.priority
+        return self.profile!.priority
     }
     
     var getCruiseID: String?{
-        return self.cruise_id
+        return self.profile!.cruise_id
     }
     
     var getPhoneNumber: Int? {
-        return self.phone_number
+        return self.profile!.phone_number
     }
     
     var isSearchable: Bool?{
-        return self.searchable
+        return self.profile!.searchable
     }
     
     
