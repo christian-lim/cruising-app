@@ -19,12 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-<<<<<<< HEAD
         NotificationCenter.default.post(name: Notification.Name(rawValue: "FirebaseSetupDone"), object: nil)
-=======
-                        NotificationCenter.default.post(name: Notification.Name(rawValue: "FirebaseSetupDone"), object: nil)
-        
->>>>>>> 29878e46976ae34f886bd96b514983dd4c1d5d7d
         return true
     }
 
