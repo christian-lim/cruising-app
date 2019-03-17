@@ -25,11 +25,14 @@ class userDataModel{
     static let sharedInstance = UserEventModel()
     
     init(){
-//        let database = firestoreDatabase
-//        database.collection("Account").whereField("userID", isEqualTo: Auth.auth().currentUser!.uid).getDocuments(){ in (querySnapshot, err)
-//            guard err == nil else {print("Error getting documents: \(err ?? "Failed" as! Error)");return}
-//            guard let querySnapshot = querySnapshot else {return}
-//        }
+        let database = firestoreDatabase
+        database.collection("Account").whereField("userID", isEqualTo: Auth.auth().currentUser!.uid).getDocuments(){ (querySnapshot, err) in
+            guard err == nil else {print("Error getting documents: \(err ?? "Failed" as! Error)");return}
+            guard let querySnapshot = querySnapshot else {return}
+            for document in querySnapshot.documents {
+                
+            }
+        }
     }
     
     var firestoreDatabase : Firestore {
