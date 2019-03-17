@@ -52,11 +52,14 @@ class UserDataModel{
         guard let data = data else {return}
         let database = firestoreDatabase
         switch operation{
-        case .updateDTF :
+        case .updateDTF:
+            self.profile?.DTF = data as? Bool
             database.collection("User").document("userID").updateData(["DTF": data])
         case .updatePhoneNumber:
+            self.profile?.phone_number = data as? Int
             database.collection("User").document("userID").updateData(["phone_number": data])
         case .updateSearchable:
+            self.profile?.searchable = data as? Bool
             database.collection("User").document("userID").updateData(["searchable": data])
         }
     }
