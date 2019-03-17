@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
-class userDataModel{
+class UserDataModel{
     
     fileprivate var name: String?
     fileprivate var age: Int?
@@ -18,19 +18,28 @@ class userDataModel{
     fileprivate var sex: String?
     fileprivate var DTF: Bool?
     fileprivate var priority: Int?
-    fileprivate var user_id: String?
     fileprivate var cruise_id: String?
     fileprivate var phone_number: Int?
     
-    static let sharedInstance = UserEventModel()
+    static let sharedInstance = UserDataModel()
     
     init(){
         let database = firestoreDatabase
-        database.collection("Account").whereField("userID", isEqualTo: Auth.auth().currentUser!.uid).getDocuments(){ (querySnapshot, err) in
+        database.collection("User").document("userID"/*Auth.auth().currentUser!.uid*/).getDocument(){ (document, err) in
             guard err == nil else {print("Error getting documents: \(err ?? "Failed" as! Error)");return}
-            guard let querySnapshot = querySnapshot else {return}
-            for document in querySnapshot.documents {
-                
+            if let document = document, document.exists {
+                let data = document.data()!
+                self.name = data["name"] as? String
+                self.age = data["age"] as? Int
+                self.room_number = data["room_number"] as? Int
+                self.sex = data["sex"] as? String
+                self.DTF = data["DTF"] as? Bool
+                self.priority = data["priority"] as? Int
+                self.cruise_id = data["cruise_id"] as? String
+                self.phone_number = data["phone_number"] as? Int
+                print(self.name,self.age, self.room_number, self.sex, self.DTF, self.priority, self.cruise_id, self.phone_number);
+            } else {
+                print("Document does not exist")
             }
         }
     }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2AA5499A928774310D6AA0B6 /* Pods_cruising_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A5BEDCECF06A9C48F7939 /* Pods_cruising_app.framework */; };
-		4E8A9E3F223DBE6C0005E099 /* eventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E3D223DBE6C0005E099 /* eventModel.swift */; };
+		4E8A9E3F223DBE6C0005E099 /* eventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E3D223DBE6C0005E099 /* eventsModel.swift */; };
 		4E8A9E40223DBE6C0005E099 /* userEventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E3E223DBE6C0005E099 /* userEventsModel.swift */; };
 		4E8A9E4D223DBE830005E099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E42223DBE830005E099 /* AppDelegate.swift */; };
 		4E8A9E4E223DBE830005E099 /* userDataModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E44223DBE830005E099 /* userDataModelController.swift */; };
@@ -32,7 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4E8A9E3D223DBE6C0005E099 /* eventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventModel.swift; sourceTree = "<group>"; };
+		4E8A9E3D223DBE6C0005E099 /* eventsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventsModel.swift; sourceTree = "<group>"; };
 		4E8A9E3E223DBE6C0005E099 /* userEventsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userEventsModel.swift; sourceTree = "<group>"; };
 		4E8A9E42223DBE830005E099 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E8A9E44223DBE830005E099 /* userDataModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userDataModelController.swift; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 		4E8A9E3C223DBE6C0005E099 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4E8A9E3D223DBE6C0005E099 /* eventModel.swift */,
+				4E8A9E3D223DBE6C0005E099 /* eventsModel.swift */,
 				4E8A9E3E223DBE6C0005E099 /* userEventsModel.swift */,
 			);
 			path = Model;
@@ -409,7 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E8A9E3F223DBE6C0005E099 /* eventModel.swift in Sources */,
+				4E8A9E3F223DBE6C0005E099 /* eventsModel.swift in Sources */,
 				4E8A9E40223DBE6C0005E099 /* userEventsModel.swift in Sources */,
 				4E8A9E4E223DBE830005E099 /* userDataModelController.swift in Sources */,
 				4E8A9E4F223DBE830005E099 /* coverViewController.swift in Sources */,
