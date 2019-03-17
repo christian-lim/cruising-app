@@ -8,7 +8,11 @@
 
 import UIKit
 
-class eventTableViewController: UITableViewController {
+class eventTableViewController: UITableViewController, eventProtocol {
+    
+    func dismiss() {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     let eventsModel = EventsModel.sharedInstance
     override func viewDidAppear(_ animated: Bool) {
@@ -55,6 +59,10 @@ class eventTableViewController: UITableViewController {
         return self.eventsModel.getDate(section: section)
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "displayEventInfo", sender: self)
+    }
+    
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let headerView = view as? UITableViewHeaderFooterView {
             headerView.textLabel?.textColor = .white
@@ -96,14 +104,27 @@ class eventTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        switch segue.identifier{
+        case "displayEventInfo":
+            let navController = segue.destination as! UINavigationController
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let event = self.eventsModel.getEventByIndexPath(indexPath: indexPath)
+                navController.navigationBar.topItem!.title = event.name
+                let EventDetailViewController = navController.topViewController as! eventDetailViewController
+                EventDetailViewController.loadEvent(data: event)
+                EventDetailViewController.delegate = self
+            }
+        default:
+            assert(false, "Unhandled Segue")
+        }
     }
-    */
+    
 
 }
