@@ -42,3 +42,13 @@ extension UIColor {
     
     static var acornGreen: UIColor { return UIColor(red: 91/255.0, green: 168/255.0 , blue: 117/255.0, alpha: 1.0)}
 }
+
+extension Encodable {
+    func asDictionary() throws -> [String: Any] {
+        let data = try JSONEncoder().encode(self)
+        guard let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
+            throw NSError()
+        }
+        return dictionary
+    }
+}

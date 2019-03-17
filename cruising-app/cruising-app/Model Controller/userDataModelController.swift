@@ -11,16 +11,16 @@ import Firebase
 import FirebaseFirestore
 import FirebaseAuth
 
-struct Profile{
-    fileprivate var name: String? = nil
-    fileprivate var age: Int? = nil
-    fileprivate var room_number: Int? = nil
-    fileprivate var sex: String? = nil
-    fileprivate var DTF: Bool? = nil
-    fileprivate var priority: Int? = nil
-    fileprivate var cruise_id: String? = nil
-    fileprivate var phone_number: Int? = nil
-    fileprivate var searchable: Bool? = nil
+struct Profile : Codable{
+    var name: String? = nil
+    var age: Int? = nil
+    var room_number: Int? = nil
+    var sex: String? = nil
+    var DTF: Bool? = nil
+    var priority: Int? = nil
+    var cruise_id: String? = nil
+    var phone_number: Int? = nil
+    var searchable: Bool? = nil
     
 }
 
@@ -32,12 +32,12 @@ class UserDataModel{
     
     init(){
         NotificationCenter.default.addObserver(self, selector: #selector(loadData), name: NSNotification.Name(rawValue: "FirebaseSetupDone"), object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadData), name: NSNotification.Name(rawValue: "NewEntry"), object: nil)
     }
 
     @objc func loadData() {
         let database = firestoreDatabase
-        database.collection("User").document("userID"/*Auth.auth().currentUser!.uid*/).getDocument(){ (document, err) in
+        database.collection("User").document(Auth.auth().currentUser!.uid).getDocument(){ (document, err) in
             guard err == nil else {print("Error getting documents: \(err ?? "Failed" as! Error)");return}
             if let document = document, document.exists {
                 let data = document.data()!
@@ -55,13 +55,13 @@ class UserDataModel{
         switch operation{
         case .updateDTF:
             self.profile?.DTF = data as? Bool
-            database.collection("User").document("userID").updateData(["DTF": data])
+            database.collection("User").document(Auth.auth().currentUser!.uid).updateData(["DTF": data])
         case .updatePhoneNumber:
             self.profile?.phone_number = data as? Int
-            database.collection("User").document("userID").updateData(["phone_number": data])
+            database.collection("User").document(Auth.auth().currentUser!.uid).updateData(["phone_number": data])
         case .updateSearchable:
             self.profile?.searchable = data as? Bool
-            database.collection("User").document("userID").updateData(["searchable": data])
+            database.collection("User").document(Auth.auth().currentUser!.uid).updateData(["searchable": data])
         }
     }
     
@@ -74,39 +74,39 @@ class UserDataModel{
     }
     
     var getName: String?{
-        return self.profile!.name
+        return self.profile?.name
     }
     
     var getAge: Int?{
-        return self.profile!.age
+        return self.profile?.age
     }
     
     var getRoomNumber: Int? {
-        return self.profile!.room_number
+        return self.profile?.room_number
     }
     
     var getSex: String? {
-        return self.profile!.sex
+        return self.profile?.sex
     }
     
     var isDTF: Bool?{
-        return self.profile!.DTF
+        return self.profile?.DTF
     }
     
     var getPriority: Int? {
-        return self.profile!.priority
+        return self.profile?.priority
     }
     
     var getCruiseID: String?{
-        return self.profile!.cruise_id
+        return self.profile?.cruise_id
     }
     
     var getPhoneNumber: Int? {
-        return self.profile!.phone_number
+        return self.profile?.phone_number
     }
     
     var isSearchable: Bool?{
-        return self.profile!.searchable
+        return self.profile?.searchable
     }
     
     

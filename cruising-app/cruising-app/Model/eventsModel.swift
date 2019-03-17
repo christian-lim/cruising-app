@@ -20,6 +20,7 @@ struct Event {
     var location: String?
     var cruise_id: String?
     var date: Date?
+    var event_id: String?
 }
 
 class EventsModel {
@@ -63,9 +64,9 @@ class EventsModel {
                         if ending_time > currentMinute(){
                             if let thisDate = (data["date"] as? Timestamp)?.dateValue() {
                                 if self.EventList.keys.contains(thisDate){
-                                    self.EventList[thisDate]!.append(Event(name: data["name"] as? String, max_capcity: data["max_capacity"] as? Int, attendance: data["attendance"] as? Int, description: data["description"] as? String, start_time: data["start_time"] as?Int, end_time: data["end_time"] as? Int, location: data["location"] as? String, cruise_id: data["cruise_id"] as? String, date: thisDate))
+                                    self.EventList[thisDate]!.append(Event(name: data["name"] as? String, max_capcity: data["max_capacity"] as? Int, attendance: data["attendance"] as? Int, description: data["description"] as? String, start_time: data["start_time"] as?Int, end_time: data["end_time"] as? Int, location: data["location"] as? String, cruise_id: data["cruise_id"] as? String, date: thisDate, event_id: document.documentID))
                                 }
-                                self.EventList[thisDate] = [Event(name: data["name"] as? String, max_capcity: data["max_capacity"] as? Int, attendance: data["attendance"] as? Int, description: data["description"] as? String, start_time: data["start_time"] as?Int, end_time: data["end_time"] as? Int, location: data["location"] as? String, cruise_id: data["cruise_id"] as? String, date: thisDate)]
+                                self.EventList[thisDate] = [Event(name: data["name"] as? String, max_capcity: data["max_capacity"] as? Int, attendance: data["attendance"] as? Int, description: data["description"] as? String, start_time: data["start_time"] as?Int, end_time: data["end_time"] as? Int, location: data["location"] as? String, cruise_id: data["cruise_id"] as? String, date: thisDate, event_id: document.documentID)]
                             }
                             }
                     } else {print("Failed")}

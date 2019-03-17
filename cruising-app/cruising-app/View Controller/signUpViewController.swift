@@ -17,6 +17,7 @@ class signUpViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
+    @IBOutlet weak var sex: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,15 @@ class signUpViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func randomString(length: Int) -> String {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        return String((0..<length).map{ _ in letters.randomElement()! })
+    }
+    
+    func randomNumber() -> Int {
+        return Int.random(in: 1..<1500)
     }
     
     @IBAction func signUp(_ sender: Any) {
@@ -42,8 +52,29 @@ class signUpViewController: UIViewController {
                 (authResult, err) in
                 guard err == nil else {return}
                 guard authResult?.user != nil else {return}
+                let userInfo = Profile(name: self.name.text, age: Int(self.age.text ?? "999"), room_number:self.randomNumber(), sex: self.sex.text, DTF: false, priority: 0, cruise_id: self.randomString(length: 6), phone_number: Int(self.phoneNumber.text ?? "1234567890"), searchable: false)
+                self.addUserInfo(profile: userInfo)
             }
             return;
+        }
+    }
+    
+    var firestoreDatabase : Firestore {
+        let database = Firestore.firestore()
+        let settings = database.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        database.settings = settings
+        return database
+    }
+    
+    func addUserInfo(profile: Profile){
+        let database = firestoreDatabase
+        
+        do {
+            database.collection("User").document(Auth.auth().currentUser!.uid).setData(try profile.asDictionary())
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "NewEntry"), object: nil)
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
     

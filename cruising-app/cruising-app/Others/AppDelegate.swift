@@ -14,12 +14,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     var window: UIWindow?
+    var authHandle: AuthStateDidChangeListenerHandle?
 
+    private func observeAuthorisedState() {
+        //        self.setupRootViewController(
+        //            viewController: SplashViewController())
+        authHandle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user == nil {
+                self.setupRootViewController(viewControllerIdentifier: "securityViewController")
+            } else {
+                self.setupRootViewController(viewControllerIdentifier: "mainTabViewController")
+            }
+        }
+    }
+    
+    private func setupRootViewController(viewControllerIdentifier: String) {
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: viewControllerIdentifier)
+        self.window!.rootViewController = viewController
+        self.window!.makeKeyAndVisible()
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         NotificationCenter.default.post(name: Notification.Name(rawValue: "FirebaseSetupDone"), object: nil)
+        observeAuthorisedState()
         return true
     }
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class profileViewController: UIViewController {
 
@@ -82,6 +83,13 @@ class profileViewController: UIViewController {
         self.userDataModel.updateSingleFirebase(data: Int(self.phoneNumberTextField.text!), operation: updateOperation.updatePhoneNumber)
     }
     
+    @IBAction func logOutButtonPressed(_ sender: UIButton) {
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
     
     /*
     // MARK: - Navigation
