@@ -19,6 +19,8 @@ class UserEventModel {
     fileprivate var user_id: String?
     fileprivate var event_id: String?
     fileprivate var cruise_id: String?
+    fileprivate var age: Int?
+    fileprivate var sex: String?
     
     static let sharedInstance = UserEventModel()
     

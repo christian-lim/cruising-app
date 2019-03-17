@@ -31,19 +31,33 @@ class MatchDataModel{
     
     let globalDispatchGroup: DispatchGroup = DispatchGroup()
     
-    fileprivate var personalEventList: [String] = []
+    fileprivate var personalEventList: [String
+        
+        ] = []
     fileprivate var matchList: [String: matchDetail] = [:]
-    fileprivate var rejectList: [String] = []
-    fileprivate var acceptList: [String] = []
+    fileprivate var rejectList: [matchDetail] = []
+    fileprivate var acceptList: [matchDetail] = []
     
     let userDataModel = UserDataModel.sharedInstance
     static let sharedInstance = MatchDataModel()
     
     init() {
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(getData), name: NSNotification.Name(rawValue: "personalEventProcessed"), object: nil)
+    }
+    
+    func getNumberEventBySection(section: Int) -> Int{
+        if matchList.keys.count == 0 {
+            return 0
+        }
+        return (matchList[Array(matchList.keys)[section]]?.eventList?.count)!
+    }
+    
+    func getEventNameByIndexPath(indexPath: IndexPath) -> String{
+        return (Array( (matchList[Array(matchList.keys)[indexPath.section]]?.eventList!)!.values)[indexPath.row])
     }
     
     func getPersonalEventList() {
+        self.personalEventList = []
         let database = firestoreDatabase
         database.collection("user_event").whereField("user_id", isEqualTo: Auth.auth().currentUser!.uid).getDocuments() { (querySnapshot, err) in
                 guard err == nil else {print("Error getting documents: \(err ?? "Failed" as! Error)");return}
@@ -52,10 +66,11 @@ class MatchDataModel{
                 let data = document.data()
                 self.personalEventList.append(data["event_id"] as! String)
             }
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "personalEventProcessed"), object: nil)
         }
     }
     
-    func getData() {
+    @objc func getData() {
         matchList.removeAll()
         var rawDataList:[rawDetail] = []
         let database = firestoreDatabase
@@ -82,6 +97,24 @@ class MatchDataModel{
             }
             NotificationCenter.default.post(name: Notification.Name(rawValue: "matchProcessed"), object: nil)
         }
+    }
+    
+    func nextMatch() -> matchDetail?{
+        if self.matchList.values.count == 0 {
+            return nil
+        }
+        let data = Array(self.matchList.values)[0]
+        return data
+    }
+    
+    func processedMatch(action: Bool, userID: String) {
+        if action {
+            self.acceptList.append(self.matchList[userID]!)
+        } else {
+            self.rejectList.append(self.matchList[userID]!)
+        }
+        self.matchList[userID] = nil
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "matchProcessed"), object: nil)
     }
     
     var firestoreDatabase : Firestore {

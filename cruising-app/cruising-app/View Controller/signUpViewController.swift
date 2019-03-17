@@ -30,10 +30,10 @@ class signUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func randomString(length: Int) -> String {
-        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        return String((0..<length).map{ _ in letters.randomElement()! })
-    }
+//    func randomString(length: Int) -> String {
+//        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+//        return String((0..<length).map{ _ in letters.randomElement()! })
+//    }
     
     func randomNumber() -> Int {
         return Int.random(in: 1..<1500)
@@ -52,7 +52,7 @@ class signUpViewController: UIViewController {
                 (authResult, err) in
                 guard err == nil else {return}
                 guard authResult?.user != nil else {return}
-                let userInfo = Profile(name: self.name.text, age: Int(self.age.text ?? "999"), room_number:self.randomNumber(), sex: self.sex.text, DTF: false, priority: 0, cruise_id: self.randomString(length: 6), phone_number: Int(self.phoneNumber.text ?? "1234567890"), searchable: false)
+                let userInfo = Profile(name: self.name.text, age: Int(self.age.text ?? "999"), room_number:self.randomNumber(), sex: self.sex.text, DTF: false, priority: 0, cruise_id: "0"/*self.randomString(length: 6)*/, phone_number: Int(self.phoneNumber.text ?? "1234567890"), searchable: false)
                 self.addUserInfo(profile: userInfo)
             }
             return;

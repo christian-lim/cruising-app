@@ -29,7 +29,9 @@ class eventDetailViewController: UIViewController {
                 "event": event_data?.name ?? "NULL",
                 "user_id": Auth.auth().currentUser?.uid ?? "---",
                 "cruise_id": event_data?.cruise_id ?? "---",
-                "event_id": event_data?.event_id ?? "---"
+                "event_id": event_data?.event_id ?? "---",
+                "age": userDataModel.getAge ?? 999,
+                "sex": userDataModel.getSex ?? "---",
             ]) { err in
                 if let err = err {
                     print("Error writing document: \(err)")
