@@ -10,6 +10,8 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
+let userDataModel = UserDataModel.sharedInstance
+
 class UserEventModel {
     
     fileprivate var name: String?

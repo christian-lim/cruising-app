@@ -10,9 +10,7 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
-class EventsModel {
-    static let sharedInstance = EventModel()
-    
+struct Event {
     fileprivate var name: String?
     fileprivate var max_capcity: Int?
     fileprivate var attendance: Int?
@@ -21,6 +19,12 @@ class EventsModel {
     fileprivate var end_time: Date?
     fileprivate var location: String?
     fileprivate var cruid_id: String?
+}
+
+class EventsModel {
+    static let sharedInstance = EventsModel()
+    
+    fileprivate var eventList: [Event] = []
     
     init(){
         
