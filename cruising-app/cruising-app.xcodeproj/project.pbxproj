@@ -19,6 +19,8 @@
 		4E8A9E55223DE3C10005E099 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E54223DE3C10005E099 /* profileViewController.swift */; };
 		4E8A9E57223DF1390005E099 /* extensionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E56223DF1390005E099 /* extensionFile.swift */; };
 		4E8A9E59223E1EF50005E099 /* enumFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E58223E1EF50005E099 /* enumFile.swift */; };
+		ED61F05E223E4F570040C269 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED61F05D223E4F570040C269 /* signUpViewController.swift */; };
+		ED61F060223E5F3A0040C269 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED61F05F223E5F3A0040C269 /* loginViewController.swift */; };
 		EDF2495C223D7F8500FAD972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF2495B223D7F8500FAD972 /* Assets.xcassets */; };
 		EDF2496A223D7F8500FAD972 /* cruising_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF24969223D7F8500FAD972 /* cruising_appTests.swift */; };
 		F884E508B290242373B77F14 /* Pods_cruising_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C569142BCC8F516C577967F0 /* Pods_cruising_appTests.framework */; };
@@ -52,6 +54,8 @@
 		B5A193BB1367ACCF29A0C6A2 /* Pods-cruising-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cruising-appTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cruising-appTests/Pods-cruising-appTests.release.xcconfig"; sourceTree = "<group>"; };
 		B824F5B7E9C6E3492444EC48 /* Pods-cruising-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cruising-appTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cruising-appTests/Pods-cruising-appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C569142BCC8F516C577967F0 /* Pods_cruising_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cruising_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED61F05D223E4F570040C269 /* signUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
+		ED61F05F223E5F3A0040C269 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		EDF24951223D7F8300FAD972 /* cruising-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cruising-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF2495B223D7F8500FAD972 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDF24960223D7F8500FAD972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 			children = (
 				4E8A9E47223DBE830005E099 /* coverViewController.swift */,
 				4E8A9E54223DE3C10005E099 /* profileViewController.swift */,
+				ED61F05D223E4F570040C269 /* signUpViewController.swift */,
+				ED61F05F223E5F3A0040C269 /* loginViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -304,15 +310,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-cruising-app/Pods-cruising-app-resources.sh",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
@@ -326,15 +328,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-cruising-app-checkManifestLockResult.txt",
 			);
@@ -347,8 +345,6 @@
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-cruising-app/Pods-cruising-app-frameworks.sh",
@@ -367,8 +363,6 @@
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
@@ -394,15 +388,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-cruising-appTests-checkManifestLockResult.txt",
 			);
@@ -422,10 +412,12 @@
 				4E8A9E40223DBE6C0005E099 /* userEventsModel.swift in Sources */,
 				4E8A9E55223DE3C10005E099 /* profileViewController.swift in Sources */,
 				4E8A9E57223DF1390005E099 /* extensionFile.swift in Sources */,
+				ED61F060223E5F3A0040C269 /* loginViewController.swift in Sources */,
 				4E8A9E4E223DBE830005E099 /* userDataModelController.swift in Sources */,
 				4E8A9E4F223DBE830005E099 /* coverViewController.swift in Sources */,
 				4E8A9E59223E1EF50005E099 /* enumFile.swift in Sources */,
 				4E8A9E4D223DBE830005E099 /* AppDelegate.swift in Sources */,
+				ED61F05E223E4F570040C269 /* signUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
