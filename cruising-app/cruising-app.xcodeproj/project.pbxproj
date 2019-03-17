@@ -24,6 +24,9 @@
 		4E8A9E55223DE3C10005E099 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E54223DE3C10005E099 /* profileViewController.swift */; };
 		4E8A9E57223DF1390005E099 /* extensionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E56223DF1390005E099 /* extensionFile.swift */; };
 		4E8A9E59223E1EF50005E099 /* enumFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E58223E1EF50005E099 /* enumFile.swift */; };
+		4EDCDA9E223EA67900F77716 /* matchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCDA9D223EA67900F77716 /* matchViewController.swift */; };
+		4EDCDAA0223EA6E200F77716 /* matchDataModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCDA9F223EA6E200F77716 /* matchDataModelController.swift */; };
+		4EDCDAA2223EB27200F77716 /* testTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCDAA1223EB27200F77716 /* testTableViewController.swift */; };
 		ED61F05E223E4F570040C269 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED61F05D223E4F570040C269 /* signUpViewController.swift */; };
 		ED61F060223E5F3A0040C269 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED61F05F223E5F3A0040C269 /* loginViewController.swift */; };
 		EDF2495C223D7F8500FAD972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF2495B223D7F8500FAD972 /* Assets.xcassets */; };
@@ -58,6 +61,9 @@
 		4E8A9E54223DE3C10005E099 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
 		4E8A9E56223DF1390005E099 /* extensionFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionFile.swift; sourceTree = "<group>"; };
 		4E8A9E58223E1EF50005E099 /* enumFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enumFile.swift; sourceTree = "<group>"; };
+		4EDCDA9D223EA67900F77716 /* matchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matchViewController.swift; sourceTree = "<group>"; };
+		4EDCDA9F223EA6E200F77716 /* matchDataModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matchDataModelController.swift; sourceTree = "<group>"; };
+		4EDCDAA1223EB27200F77716 /* testTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testTableViewController.swift; sourceTree = "<group>"; };
 		4F1A5BEDCECF06A9C48F7939 /* Pods_cruising_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cruising_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D41425218194C8900A3CC0 /* Pods-cruising-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cruising-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cruising-app/Pods-cruising-app.debug.xcconfig"; sourceTree = "<group>"; };
 		7CE66289AF0C7CF6D8F93254 /* Pods-cruising-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cruising-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-cruising-app/Pods-cruising-app.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				4E8A9E44223DBE830005E099 /* userDataModelController.swift */,
+				4EDCDA9F223EA6E200F77716 /* matchDataModelController.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -140,6 +147,8 @@
 				ED61F05F223E5F3A0040C269 /* loginViewController.swift */,
 				4E206120223E33B90053A79F /* eventTableViewController.swift */,
 				4E206126223E4F4D0053A79F /* eventDetailViewController.swift */,
+				4EDCDA9D223EA67900F77716 /* matchViewController.swift */,
+				4EDCDAA1223EB27200F77716 /* testTableViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -423,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EDCDA9E223EA67900F77716 /* matchViewController.swift in Sources */,
 				4E8A9E3F223DBE6C0005E099 /* eventsModel.swift in Sources */,
 				4E8A9E40223DBE6C0005E099 /* userEventsModel.swift in Sources */,
 				4E8A9E55223DE3C10005E099 /* profileViewController.swift in Sources */,
@@ -432,12 +442,14 @@
 				4E8A9E4E223DBE830005E099 /* userDataModelController.swift in Sources */,
 				4E206127223E4F4D0053A79F /* eventDetailViewController.swift in Sources */,
 				4E20611B223E2EF40053A79F /* eventTableViewCell.swift in Sources */,
+				4EDCDAA0223EA6E200F77716 /* matchDataModelController.swift in Sources */,
 				4E8A9E4F223DBE830005E099 /* coverViewController.swift in Sources */,
 				4E206123223E42530053A79F /* dateHelper.swift in Sources */,
 				4E206129223E4FB30053A79F /* protocolFile.swift in Sources */,
 				4E8A9E59223E1EF50005E099 /* enumFile.swift in Sources */,
 				4E8A9E4D223DBE830005E099 /* AppDelegate.swift in Sources */,
 				ED61F05E223E4F570040C269 /* signUpViewController.swift in Sources */,
+				4EDCDAA2223EB27200F77716 /* testTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
