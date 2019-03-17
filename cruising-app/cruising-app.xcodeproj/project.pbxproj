@@ -13,13 +13,13 @@
 		4E206123223E42530053A79F /* dateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E206122223E42530053A79F /* dateHelper.swift */; };
 		4E206127223E4F4D0053A79F /* eventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E206126223E4F4D0053A79F /* eventDetailViewController.swift */; };
 		4E206129223E4FB30053A79F /* protocolFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E206128223E4FB30053A79F /* protocolFile.swift */; };
+		4E75C905223E80D100016166 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E75C903223E80D100016166 /* Main.storyboard */; };
 		4E8A9E3F223DBE6C0005E099 /* eventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E3D223DBE6C0005E099 /* eventsModel.swift */; };
 		4E8A9E40223DBE6C0005E099 /* userEventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E3E223DBE6C0005E099 /* userEventsModel.swift */; };
 		4E8A9E4D223DBE830005E099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E42223DBE830005E099 /* AppDelegate.swift */; };
 		4E8A9E4E223DBE830005E099 /* userDataModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E44223DBE830005E099 /* userDataModelController.swift */; };
 		4E8A9E4F223DBE830005E099 /* coverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E47223DBE830005E099 /* coverViewController.swift */; };
 		4E8A9E50223DBE830005E099 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E8A9E49223DBE830005E099 /* LaunchScreen.storyboard */; };
-		4E8A9E51223DBE830005E099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E8A9E4B223DBE830005E099 /* Main.storyboard */; };
 		4E8A9E53223DBEE40005E099 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E8A9E52223DBEE40005E099 /* GoogleService-Info.plist */; };
 		4E8A9E55223DE3C10005E099 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E54223DE3C10005E099 /* profileViewController.swift */; };
 		4E8A9E57223DF1390005E099 /* extensionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E56223DF1390005E099 /* extensionFile.swift */; };
@@ -47,13 +47,13 @@
 		4E206122223E42530053A79F /* dateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateHelper.swift; sourceTree = "<group>"; };
 		4E206126223E4F4D0053A79F /* eventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventDetailViewController.swift; sourceTree = "<group>"; };
 		4E206128223E4FB30053A79F /* protocolFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocolFile.swift; sourceTree = "<group>"; };
+		4E75C904223E80D100016166 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E8A9E3D223DBE6C0005E099 /* eventsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventsModel.swift; sourceTree = "<group>"; };
 		4E8A9E3E223DBE6C0005E099 /* userEventsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userEventsModel.swift; sourceTree = "<group>"; };
 		4E8A9E42223DBE830005E099 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E8A9E44223DBE830005E099 /* userDataModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userDataModelController.swift; sourceTree = "<group>"; };
 		4E8A9E47223DBE830005E099 /* coverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = coverViewController.swift; sourceTree = "<group>"; };
 		4E8A9E4A223DBE830005E099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4E8A9E4C223DBE830005E099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E8A9E52223DBEE40005E099 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4E8A9E54223DE3C10005E099 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
 		4E8A9E56223DF1390005E099 /* extensionFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionFile.swift; sourceTree = "<group>"; };
@@ -99,7 +99,6 @@
 			children = (
 				4E8A9E3D223DBE6C0005E099 /* eventsModel.swift */,
 				4E8A9E3E223DBE6C0005E099 /* userEventsModel.swift */,
-				ED61F055223DF29A0040C269 /* diningModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,13 +136,10 @@
 			children = (
 				4E8A9E47223DBE830005E099 /* coverViewController.swift */,
 				4E8A9E54223DE3C10005E099 /* profileViewController.swift */,
-<<<<<<< HEAD
 				ED61F05D223E4F570040C269 /* signUpViewController.swift */,
 				ED61F05F223E5F3A0040C269 /* loginViewController.swift */,
-=======
 				4E206120223E33B90053A79F /* eventTableViewController.swift */,
 				4E206126223E4F4D0053A79F /* eventDetailViewController.swift */,
->>>>>>> model
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -152,7 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				4E8A9E49223DBE830005E099 /* LaunchScreen.storyboard */,
-				4E8A9E4B223DBE830005E099 /* Main.storyboard */,
+				4E75C903223E80D100016166 /* Main.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -307,8 +303,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E8A9E51223DBE830005E099 /* Main.storyboard in Resources */,
 				4E8A9E53223DBEE40005E099 /* GoogleService-Info.plist in Resources */,
+				4E75C905223E80D100016166 /* Main.storyboard in Resources */,
 				4E8A9E50223DBE830005E099 /* LaunchScreen.storyboard in Resources */,
 				EDF2495C223D7F8500FAD972 /* Assets.xcassets in Resources */,
 			);
@@ -464,20 +460,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4E75C903223E80D100016166 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E75C904223E80D100016166 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		4E8A9E49223DBE830005E099 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4E8A9E4A223DBE830005E099 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		4E8A9E4B223DBE830005E099 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4E8A9E4C223DBE830005E099 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
