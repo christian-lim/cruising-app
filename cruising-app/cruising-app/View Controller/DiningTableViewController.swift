@@ -10,9 +10,10 @@ import UIKit
 
 class DiningTableViewController: UITableViewController {
     @IBOutlet weak var diningTabBarButton: UITabBarItem!
-    
+    let diningModel = DiningModel.sharedInstance
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
