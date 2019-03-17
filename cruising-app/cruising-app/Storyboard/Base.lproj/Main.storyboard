@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sek-uU-Zeg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sek-uU-Zeg">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -123,29 +123,33 @@
             <point key="canvasLocation" x="417" y="1051"/>
         </scene>
         <!--Events-->
-        <scene sceneID="401-3t-pkB">
+        <scene sceneID="cJl-25-j5M">
             <objects>
-                <viewController id="QhQ-bz-3rU" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XmX-yw-a2k">
+                <tableViewController id="vvy-Yo-pCM" customClass="EventsTableViewController" customModule="cruising_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kmX-QI-9Hj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" text="Events" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hNd-IU-jZn">
-                                <rect key="frame" x="0.0" y="44" width="375" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="37"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="yes-3T-ipT"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Events" id="IsI-tg-8IU"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4sN-3C-6kH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="yca-6J-ZUn">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yca-6J-ZUn" id="2in-Ck-zEV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vvy-Yo-pCM" id="I1i-DI-kxB"/>
+                            <outlet property="delegate" destination="vvy-Yo-pCM" id="wcq-u9-3O3"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Events" id="Lbb-wH-0G2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="euT-MT-Ygl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="417" y="-1147"/>
+            <point key="canvasLocation" x="1047" y="-1111"/>
         </scene>
         <!--Home-->
         <scene sceneID="R2l-iY-tK2">
@@ -209,7 +213,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="aQg-Mv-dGm" kind="relationship" relationship="viewControllers" id="des-xy-R1n"/>
-                        <segue destination="QhQ-bz-3rU" kind="relationship" relationship="viewControllers" id="muQ-Ay-8mb"/>
+                        <segue destination="vvy-Yo-pCM" kind="relationship" relationship="viewControllers" id="BpS-PV-qmN"/>
                         <segue destination="xqG-GF-fEy" kind="relationship" relationship="viewControllers" id="yFW-O9-qdT"/>
                         <segue destination="Ie7-lm-G4U" kind="relationship" relationship="viewControllers" id="h3x-dm-6Cr"/>
                         <segue destination="iWX-i5-tVW" kind="relationship" relationship="viewControllers" id="dOg-f1-w6M"/>
