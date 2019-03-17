@@ -37,7 +37,6 @@ class UserDataModel{
                 self.priority = data["priority"] as? Int
                 self.cruise_id = data["cruise_id"] as? String
                 self.phone_number = data["phone_number"] as? Int
-                print(self.name,self.age, self.room_number, self.sex, self.DTF, self.priority, self.cruise_id, self.phone_number);
             } else {
                 print("Document does not exist")
             }
