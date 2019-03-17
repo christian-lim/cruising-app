@@ -19,9 +19,12 @@ class eventTableViewController: UITableViewController, eventProtocol {
         NotificationCenter.default.addObserver(self, selector: #selector(refreshTable), name: NSNotification.Name(rawValue: "eventModelDidUpdate"), object: nil)
     }
     
+    override func viewDidLayoutSubviews() {
+        refreshTable()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

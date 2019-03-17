@@ -81,7 +81,7 @@ class eventDetailViewController: UIViewController {
         dateComponent.day = extraEndDay
         let endDateString = formatter.string(from: Calendar.current.date(byAdding: dateComponent, to: day)!)
         
-        return "\(starDateString)   \(startHourString) --- \(endDateString)   \(endHourString)"
+        return "Start:\(starDateString) \(startHourString)   End: \(endDateString) \(endHourString)"
     }
     
     func updateWatchList(){
@@ -101,7 +101,7 @@ class eventDetailViewController: UIViewController {
         super.viewDidLoad()
         if let event = event_data {
             descriptionTextField.text = event.description
-            locationLabel.text = event.location
+            locationLabel.text = "Location: " + (event.location ?? "NULL")
             timeRangeLabel.text = mergeDate(day: event.date!, start_time: event.start_time!, end_time: event.end_time!)
             updateWatchList()
         }

@@ -61,7 +61,7 @@ class EventsModel {
                 for document in querySnapshot.documents {
                     let data = document.data()
                     if let ending_time = data["end_time"] as? Int{
-                        if ending_time > currentMinute(){
+                        if ((((data["date"] as? Timestamp)?.dateValue())! == today()) && ending_time > currentMinute()) || (((data["date"] as? Timestamp)?.dateValue())! > today()){
                             if let thisDate = (data["date"] as? Timestamp)?.dateValue() {
                                 if self.EventList.keys.contains(thisDate){
                                     self.EventList[thisDate]!.append(Event(name: data["name"] as? String, max_capcity: data["max_capacity"] as? Int, attendance: data["attendance"] as? Int, description: data["description"] as? String, start_time: data["start_time"] as?Int, end_time: data["end_time"] as? Int, location: data["location"] as? String, cruise_id: data["cruise_id"] as? String, date: thisDate, event_id: document.documentID))
