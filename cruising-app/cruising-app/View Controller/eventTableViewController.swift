@@ -10,6 +10,8 @@ import UIKit
 
 class eventTableViewController: UITableViewController {
 
+    let eventsModel = EventsModel.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
