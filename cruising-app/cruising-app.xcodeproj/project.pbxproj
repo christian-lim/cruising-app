@@ -10,6 +10,7 @@
 		2AA5499A928774310D6AA0B6 /* Pods_cruising_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A5BEDCECF06A9C48F7939 /* Pods_cruising_app.framework */; };
 		4E20611B223E2EF40053A79F /* eventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E20611A223E2EF40053A79F /* eventTableViewCell.swift */; };
 		4E206121223E33B90053A79F /* eventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E206120223E33B90053A79F /* eventTableViewController.swift */; };
+		4E206123223E42530053A79F /* dateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E206122223E42530053A79F /* dateHelper.swift */; };
 		4E8A9E3F223DBE6C0005E099 /* eventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E3D223DBE6C0005E099 /* eventsModel.swift */; };
 		4E8A9E40223DBE6C0005E099 /* userEventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E3E223DBE6C0005E099 /* userEventsModel.swift */; };
 		4E8A9E4D223DBE830005E099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9E42223DBE830005E099 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		4E20611A223E2EF40053A79F /* eventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventTableViewCell.swift; sourceTree = "<group>"; };
 		4E206120223E33B90053A79F /* eventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventTableViewController.swift; sourceTree = "<group>"; };
+		4E206122223E42530053A79F /* dateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateHelper.swift; sourceTree = "<group>"; };
 		4E8A9E3D223DBE6C0005E099 /* eventsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventsModel.swift; sourceTree = "<group>"; };
 		4E8A9E3E223DBE6C0005E099 /* userEventsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userEventsModel.swift; sourceTree = "<group>"; };
 		4E8A9E42223DBE830005E099 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				4E8A9E42223DBE830005E099 /* AppDelegate.swift */,
 				4E8A9E56223DF1390005E099 /* extensionFile.swift */,
 				4E8A9E58223E1EF50005E099 /* enumFile.swift */,
+				4E206122223E42530053A79F /* dateHelper.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				4E8A9E4E223DBE830005E099 /* userDataModelController.swift in Sources */,
 				4E20611B223E2EF40053A79F /* eventTableViewCell.swift in Sources */,
 				4E8A9E4F223DBE830005E099 /* coverViewController.swift in Sources */,
+				4E206123223E42530053A79F /* dateHelper.swift in Sources */,
 				4E8A9E59223E1EF50005E099 /* enumFile.swift in Sources */,
 				4E8A9E4D223DBE830005E099 /* AppDelegate.swift in Sources */,
 			);

@@ -29,4 +29,16 @@ extension UIViewController {
         }, completion: {(isCompleted) in
             toastLabel.removeFromSuperview()
         })
-    } }
+    }
+    
+}
+
+extension UIColor {
+    static var lionBlue : UIColor { return UIColor(red: 30/255.0, green: 64/255.0, blue: 123/255.0, alpha: 1.0)  }
+    
+    static var yellowShaded: UIColor { return UIColor(red: 234/255.0, green: 204/255.0, blue: 68/255.0, alpha: 1.0) }
+    
+    static var googleGreen: UIColor { return UIColor(red: 52/255.0, green: 166/255.0, blue: 103/255.0, alpha: 1.0)}
+    
+    static var acornGreen: UIColor { return UIColor(red: 91/255.0, green: 168/255.0 , blue: 117/255.0, alpha: 1.0)}
+}

@@ -11,10 +11,13 @@ import UIKit
 class eventTableViewController: UITableViewController {
 
     let eventsModel = EventsModel.sharedInstance
+    override func viewDidAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshTable), name: NSNotification.Name(rawValue: "eventModelDidUpdate"), object: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -24,26 +27,40 @@ class eventTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    @objc func refreshTable() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return eventsModel.numberOfDays
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return eventsModel.numberOfEventsPerDay(section: section)
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! eventTableViewCell
+        let event = self.eventsModel.getEventByIndexPath(indexPath: indexPath)
+        cell.eventNameLabel.text = event.name
+        cell.eventLocationLabel.text = event.location
         return cell
     }
-    */
 
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.eventsModel.getDate(section: section)
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let headerView = view as? UITableViewHeaderFooterView {
+            headerView.textLabel?.textColor = .white
+            headerView.backgroundView?.backgroundColor = .acornGreen
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

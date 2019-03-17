@@ -11,51 +11,48 @@ import Firebase
 import FirebaseFirestore
 
 struct Event {
-    fileprivate var name: String?
-    fileprivate var max_capcity: Int?
-    fileprivate var attendance: Int?
-    fileprivate var description: String?
-    fileprivate var start_time: Int?
-    fileprivate var end_time: Int?
-    fileprivate var location: String?
-    fileprivate var cruise_id: String?
-    fileprivate var date: Date?
+    var name: String?
+    var max_capcity: Int?
+    var attendance: Int?
+    var description: String?
+    var start_time: Int?
+    var end_time: Int?
+    var location: String?
+    var cruise_id: String?
+    var date: Date?
 }
 
 class EventsModel {
     static let sharedInstance = EventsModel()
     
-    fileprivate var eventList: [Event] = []
+    fileprivate var EventList: [Date: [Event]] = [:]
     
+    var eventList : [Date: [Event]] {
+        return EventList
+    }
+
     init(){
         NotificationCenter.default.addObserver(self, selector: #selector(loadData), name: NSNotification.Name(rawValue: "FirebaseSetupDone"), object: nil)
     }
+    var numberOfDays : Int {return self.EventList.keys.count}
     
-    func today() -> Date {
-        let date = Date()
-        let calendar = Calendar.current
-        var currentMonthComponents = calendar.dateComponents([.year,.month,.day], from: date)
-        currentMonthComponents.day = calendar.component(.day, from: date)
-        let today = calendar.date(from: currentMonthComponents)
-        return today!
+    var numberOfEvents : Int {return Array(self.EventList.values).count}
+    
+    func numberOfEventsPerDay(section: Int) -> Int {
+        return self.EventList[self.EventList.keys.sorted()[section]]!.count
     }
     
-    func currentMinute() -> Int{
-        let currentTime = Calendar.current.dateComponents([.hour, .minute], from: Date())
-        return currentTime.hour!*60+currentTime.minute!
+    func getEventByIndexPath(indexPath: IndexPath) -> Event{
+        return self.EventList[self.EventList.keys.sorted()[indexPath.section]]![indexPath.row]
     }
     
-    func parseDateToDate(){
-        
-    }
-    
-    func parseDateToTimeStamp(){
-        
+    func getDate(section: Int) -> String{
+        let date = self.EventList.keys.sorted()[section]
+        return parseDateToString(date: date)
     }
     
     @objc func loadData(){
         let database = firestoreDatabase
-        print(today())
         database.collection("Event").whereField("date", isGreaterThanOrEqualTo: today())
             .getDocuments() { (querySnapshot, err) in
                 guard err == nil else {print("Error getting documents: \(err ?? "Failed" as! Error)");return}
@@ -63,15 +60,17 @@ class EventsModel {
                 for document in querySnapshot.documents {
                     let data = document.data()
                     if let ending_time = data["end_time"] as? Int{
-                        print(ending_time, self.currentMinute())
-                        print(data["date"])
-                        if ending_time > self.currentMinute(){
-                            self.eventList.append(Event(name: data["name"] as? String, max_capcity: data["max_capacity"] as? Int, attendance: data["attendance"] as? Int, description: data["description"] as? String, start_time: data["start_time"] as?Int, end_time: data["end_time"] as? Int, location: data["location"] as? String, cruise_id: data["cruise_id"] as? String, date: (data["date"] as? Timestamp)?.dateValue()))
-                        }
-                    } else {print("Failed", self.currentMinute())}
+                        if ending_time > currentMinute(){
+                            if let thisDate = (data["date"] as? Timestamp)?.dateValue() {
+                                if self.EventList.keys.contains(thisDate){
+                                    self.EventList[thisDate]!.append(Event(name: data["name"] as? String, max_capcity: data["max_capacity"] as? Int, attendance: data["attendance"] as? Int, description: data["description"] as? String, start_time: data["start_time"] as?Int, end_time: data["end_time"] as? Int, location: data["location"] as? String, cruise_id: data["cruise_id"] as? String, date: thisDate))
+                                }
+                                self.EventList[thisDate] = [Event(name: data["name"] as? String, max_capcity: data["max_capacity"] as? Int, attendance: data["attendance"] as? Int, description: data["description"] as? String, start_time: data["start_time"] as?Int, end_time: data["end_time"] as? Int, location: data["location"] as? String, cruise_id: data["cruise_id"] as? String, date: thisDate)]
+                            }
+                            }
+                    } else {print("Failed")}
                 }
                 NotificationCenter.default.post(name: Notification.Name(rawValue: "eventModelDidUpdate"), object: nil)
-                
         }
     }
     
