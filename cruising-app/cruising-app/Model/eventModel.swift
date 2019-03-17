@@ -1,5 +1,5 @@
 //
-//  userEventsModel.swift
+//  eventModel.swift
 //  cruising-app
 //
 //  Created by Peter Luo on 3/16/19.
@@ -10,17 +10,17 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
-let userDataModel = UserDataModel.sharedInstance
-
-class UserEventModel {
+class EventsModel {
+    static let sharedInstance = EventModel()
     
     fileprivate var name: String?
-    fileprivate var event: String?
-    fileprivate var user_id: String?
-    fileprivate var event_id: String?
-    fileprivate var cruise_id: String?
-    
-    static let sharedInstance = UserEventModel()
+    fileprivate var max_capcity: Int?
+    fileprivate var attendance: Int?
+    fileprivate var description: String?
+    fileprivate var start_time: Date?
+    fileprivate var end_time: Date?
+    fileprivate var location: String?
+    fileprivate var cruid_id: String?
     
     init(){
         
